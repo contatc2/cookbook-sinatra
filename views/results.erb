@@ -1,0 +1,7 @@
+<h1>-- Here are the recipes with <%= @ingredient %>--</h1>
+
+<ol>
+  <% @ingredient_recipes.each_with_index do |recipe, index| %>
+    <li><a href="/select?name=<%= index %>&ingredient=<%= @ingredient %>"> <%= "#{recipe.name} (#{recipe.prep_time} #{recipe.difficulty})"%> - click to select</a></li>
+  <% end %>
+</ol>

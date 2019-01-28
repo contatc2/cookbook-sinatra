@@ -1,0 +1,17 @@
+<h1>-- Here are all your recipes --</h1>
+
+<ul>
+  <% @recipes.each_with_index do |recipe, index|
+      cross = recipe.done.to_s == "true" ? "X" : " "%>
+    <li><%= "[#{cross}] - #{recipe.name} (#{recipe.prep_time} - #{recipe.difficulty})"%> <a href="/delete?index=<%= index %>"> delete recipe</a> <% unless recipe.done.to_s == "true" %><a href="/mark?index=<%= index %>">mark as done</a>
+        <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/new">Add a new recipe</a><br>
+<a href="/import">Import a new recipe</a>
+
+
+
+
